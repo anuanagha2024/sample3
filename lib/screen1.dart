@@ -43,11 +43,11 @@ New({required this.name, required this.email, required this.password});
           Container(height: 50,width: 250,color: Colors.white,
             child:Row(children: [
               Icon(
-                Icons.phone,
+                Icons.email,
                 size: 25,
                 color: Colors.black,
               ),
-              Text('+914526687532',style: TextStyle(color:Colors.black,),)
+              Text(password,style: TextStyle(color:Colors.black,),)
             ],
             ),
           ),
@@ -59,11 +59,11 @@ New({required this.name, required this.email, required this.password});
             color: Colors.white,
             child: Row(
               children: [Icon(
-                Icons.email,
+                Icons.lock,
                 size: 25
                 ,color: Colors.black,
               ),
-              Text('maitexa234@gmail.com'),],),)
+              Text(email),],),)
         ],
 
       ),

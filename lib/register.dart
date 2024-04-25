@@ -14,87 +14,104 @@ class Reg extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: Column(
-        children: [
-          Text(
-            'Register your\naccount',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 78,
+        backgroundColor: Colors.black,
+        body: Column(
+          children: [
+            Text(
+              'Register your\naccount',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 78,
+              ),
             ),
-          ),
-          CircleAvatar(radius: 50, backgroundColor: Colors.white),
-          SizedBox(
-            height: 28,
-          ),
-          SizedBox(
+            CircleAvatar(radius: 50, backgroundColor: Colors.white),
+            SizedBox(
+              height: 28,
+            ),
+            SizedBox(
+                height: 28,
+                width: 400,
+                child: TextField(
+                    controller: myController,
+                    style: TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12.0)),
+                        labelText: "Name",
+                        prefixIcon: Icon(
+                          Icons.near_me,
+                          color: Colors.white,
+                        )))),
+            SizedBox(
+              height: 28,
+            ),
+            SizedBox(
               height: 28,
               width: 400,
               child: TextField(
-                  controller: myController,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12.0)),
-                      labelText: "Name",
-                      prefixIcon: Icon(
-                        Icons.near_me,color: Colors.white,
-                      )))),
-          SizedBox(
-            height: 28,
-          ),
-          SizedBox(
-            height: 28,
-            width: 400,
-            child: TextField(
-              controller: def,
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.0)),
-                  labelText: "Email",
-                  prefixIcon: Icon(
-                    Icons.email,color: Colors.white,
-                  )),
-            ),
-          ),
-          SizedBox(
-            height: 28,
-          ),
-          SizedBox(
-            height: 28,
-            width: 400,
-            child: TextField(
-              controller: abc,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.0)),
-                labelText: "Password",
-                prefixIcon: Icon(Icons.lock,color: Colors.white,),
+                controller: def,
+                  style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0)),
+                    labelText: "Email",
+                    prefixIcon: Icon(
+                      Icons.email,
+                      color: Colors.white,
+                    )),
               ),
             ),
-          ),
-          SizedBox(
-            height: 28,
-          ),
-          SizedBox(
-            width: 100,
-            child: TextButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context)=> New(name: "anu",email: "asdfg",password: "qwertyu",),));
-                print(myController.text);
-                print(abc.text);
-                print(def.text);
-              },
-              child: Text(
-                "Register",
-                style: TextStyle(
-                  color: Colors.white,
-                  backgroundColor: Colors.blue,
+            SizedBox(
+              height: 28,
+            ),
+            SizedBox(
+              height: 28,
+              width: 400,
+              child: TextField(
+                controller: abc,
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12.0)),
+                  labelText: "Password",
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
-          )
-
-        ],
-      )
-    );
+            SizedBox(
+              height: 28,
+            ),
+            SizedBox(
+              width: 100,
+              child: TextButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => New(
+                          name: myController.text,
+                          email:abc.text  ,
+                          password: def.text,
+                        ),
+                      ));
+                  print(myController.text);
+                  print(abc.text);
+                  print(def.text);
+                },
+                child: Text(
+                  "Register",
+                  style: TextStyle(
+                    color: Colors.white,
+                    backgroundColor: Colors.blue,
+                  ),
+                ),
+              ),
+            )
+          ],
+        ));
   }
 }
